@@ -1,0 +1,1209 @@
+[
+    {
+        "id": "19ef90f4.4dc70f",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "1f2c9cd9.64a733",
+        "type": "http request",
+        "z": "19ef90f4.4dc70f",
+        "name": "Get JSON Data",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": false,
+        "url": "https://api.thingspeak.com/channels/998094/fields/{{{query}}}}",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "x": 540,
+        "y": 60,
+        "wires": [
+            [
+                "25dc7c1.c63c284"
+            ]
+        ]
+    },
+    {
+        "id": "a34ff103.833dd",
+        "type": "inject",
+        "z": "19ef90f4.4dc70f",
+        "name": "Make Request",
+        "topic": "",
+        "payload": "1.json?results=1",
+        "payloadType": "str",
+        "repeat": "10",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 140,
+        "y": 60,
+        "wires": [
+            [
+                "95775252.934bd"
+            ]
+        ]
+    },
+    {
+        "id": "95775252.934bd",
+        "type": "change",
+        "z": "19ef90f4.4dc70f",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "query",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 360,
+        "y": 60,
+        "wires": [
+            [
+                "1f2c9cd9.64a733"
+            ]
+        ]
+    },
+    {
+        "id": "25dc7c1.c63c284",
+        "type": "change",
+        "z": "19ef90f4.4dc70f",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.feeds[0].field1",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 120,
+        "y": 120,
+        "wires": [
+            [
+                "62ff34fa.3b37ec"
+            ]
+        ]
+    },
+    {
+        "id": "8b775b01.4a6738",
+        "type": "http request",
+        "z": "19ef90f4.4dc70f",
+        "name": "Get JSON Data",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": false,
+        "url": "https://api.thingspeak.com/channels/998094/fields/{{{query}}}}",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "x": 520,
+        "y": 260,
+        "wires": [
+            [
+                "3c41b531.fed3ea"
+            ]
+        ]
+    },
+    {
+        "id": "c99c4486.ba6418",
+        "type": "inject",
+        "z": "19ef90f4.4dc70f",
+        "name": "Make Request",
+        "topic": "",
+        "payload": "2.json?results=1",
+        "payloadType": "str",
+        "repeat": "10",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 140,
+        "y": 260,
+        "wires": [
+            [
+                "e390a943.139e58"
+            ]
+        ]
+    },
+    {
+        "id": "e390a943.139e58",
+        "type": "change",
+        "z": "19ef90f4.4dc70f",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "query",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 340,
+        "y": 260,
+        "wires": [
+            [
+                "8b775b01.4a6738"
+            ]
+        ]
+    },
+    {
+        "id": "3c41b531.fed3ea",
+        "type": "change",
+        "z": "19ef90f4.4dc70f",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.feeds[0].field2",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 120,
+        "y": 320,
+        "wires": [
+            [
+                "a47032a5.843e9"
+            ]
+        ]
+    },
+    {
+        "id": "23cb94b2.69e60c",
+        "type": "http request",
+        "z": "19ef90f4.4dc70f",
+        "name": "Get JSON Data",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": false,
+        "url": "https://api.thingspeak.com/channels/998094/fields/{{{query}}}}",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "x": 540,
+        "y": 460,
+        "wires": [
+            [
+                "4f5cd88.8d35e28"
+            ]
+        ]
+    },
+    {
+        "id": "dad79d8a.e08fe",
+        "type": "inject",
+        "z": "19ef90f4.4dc70f",
+        "name": "Make Request",
+        "topic": "",
+        "payload": "3.json?results=1",
+        "payloadType": "str",
+        "repeat": "10",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 160,
+        "y": 460,
+        "wires": [
+            [
+                "1d614dc9.dd0f42"
+            ]
+        ]
+    },
+    {
+        "id": "1d614dc9.dd0f42",
+        "type": "change",
+        "z": "19ef90f4.4dc70f",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "query",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 360,
+        "y": 460,
+        "wires": [
+            [
+                "23cb94b2.69e60c"
+            ]
+        ]
+    },
+    {
+        "id": "4f5cd88.8d35e28",
+        "type": "change",
+        "z": "19ef90f4.4dc70f",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.feeds[0].field3",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 140,
+        "y": 520,
+        "wires": [
+            [
+                "caccca3.b0a8638"
+            ]
+        ]
+    },
+    {
+        "id": "a47032a5.843e9",
+        "type": "change",
+        "z": "19ef90f4.4dc70f",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "$number(payload)",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 300,
+        "y": 340,
+        "wires": [
+            [
+                "98d9799.de5d288",
+                "91095301.cc1d1",
+                "c6793b74.cb49a8"
+            ]
+        ]
+    },
+    {
+        "id": "62ff34fa.3b37ec",
+        "type": "change",
+        "z": "19ef90f4.4dc70f",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "$number(payload)",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 300,
+        "y": 140,
+        "wires": [
+            [
+                "a76f7b92.d1fa48",
+                "4ff26dc9.132bf4",
+                "1c6ea65e.aa355a"
+            ]
+        ]
+    },
+    {
+        "id": "caccca3.b0a8638",
+        "type": "change",
+        "z": "19ef90f4.4dc70f",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "$number(payload)",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 320,
+        "y": 540,
+        "wires": [
+            [
+                "9bebb23.6aa8f5",
+                "30760d52.52dc42",
+                "9367636a.a53f5"
+            ]
+        ]
+    },
+    {
+        "id": "a76f7b92.d1fa48",
+        "type": "ui_gauge",
+        "z": "19ef90f4.4dc70f",
+        "name": "eCO2 Gauge",
+        "group": "7e389247.61017c",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "eCO2 Gauge",
+        "label": "ppm",
+        "format": "{{value}}",
+        "min": "400",
+        "max": "8192",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 490,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "4ff26dc9.132bf4",
+        "type": "ui_chart",
+        "z": "19ef90f4.4dc70f",
+        "name": "",
+        "group": "7e389247.61017c",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "eCO2 Line Chart",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "5",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "outputs": 1,
+        "x": 510,
+        "y": 160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "98d9799.de5d288",
+        "type": "ui_gauge",
+        "z": "19ef90f4.4dc70f",
+        "name": "TVOC Gauge",
+        "group": "593f5489.70ceac",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "TVOC Gauge",
+        "label": "ppb",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "1187",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 500,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "91095301.cc1d1",
+        "type": "ui_chart",
+        "z": "19ef90f4.4dc70f",
+        "name": "TVOC Line Chart",
+        "group": "593f5489.70ceac",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "TVOC Line Chart",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "5",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "outputs": 1,
+        "x": 510,
+        "y": 360,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9bebb23.6aa8f5",
+        "type": "ui_gauge",
+        "z": "19ef90f4.4dc70f",
+        "name": "MICS Gauge",
+        "group": "b37e3329.404eb",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "MICS Gauge",
+        "label": "ppm",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "500",
+        "colors": [
+            "#136fe7",
+            "#136fe7",
+            "#136fe7"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 550,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "30760d52.52dc42",
+        "type": "ui_chart",
+        "z": "19ef90f4.4dc70f",
+        "name": "MICS Line Chart",
+        "group": "b37e3329.404eb",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "MICS Line Chart",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "5",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "outputs": 1,
+        "x": 560,
+        "y": 560,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9367636a.a53f5",
+        "type": "function",
+        "z": "19ef90f4.4dc70f",
+        "name": "MICS Range Select",
+        "func": "\nif(msg.payload < 20)\n{\n    msg.select = 1;\n}\nelse if(21 < msg.payload < 50)\n{\n    msg.select = 2;\n}\nelse if(51 < msg.payload < 80)\n{\n    msg.select = 3;\n}\nelse\n{\n   msg.select = 4;\n}\n\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 390,
+        "y": 620,
+        "wires": [
+            [
+                "5a19196b.a81bc8"
+            ]
+        ]
+    },
+    {
+        "id": "b15cc192.ed6c7",
+        "type": "ui_led",
+        "z": "19ef90f4.4dc70f",
+        "group": "b37e3329.404eb",
+        "order": 5,
+        "width": "3",
+        "height": "3",
+        "label": "MICS",
+        "labelPlacement": "left",
+        "labelAlignment": "center",
+        "colorForValue": [
+            {
+                "color": "green",
+                "value": "1",
+                "valueType": "num"
+            },
+            {
+                "color": "yellow",
+                "value": "2",
+                "valueType": "num"
+            },
+            {
+                "color": "orange",
+                "value": "3",
+                "valueType": "num"
+            },
+            {
+                "color": "red",
+                "value": "4",
+                "valueType": "num"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "name": "MICS Indicator",
+        "x": 800,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "900e1da7.849be",
+        "type": "http request",
+        "z": "19ef90f4.4dc70f",
+        "name": "Get JSON Data",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": false,
+        "url": "https://api.thingspeak.com/channels/998094/fields/{{{query}}}}",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "x": 540,
+        "y": 740,
+        "wires": [
+            [
+                "85bc9c3d.0e10d"
+            ]
+        ]
+    },
+    {
+        "id": "6a7d8154.f8105",
+        "type": "inject",
+        "z": "19ef90f4.4dc70f",
+        "name": "Make Request",
+        "topic": "",
+        "payload": "4.json?results=1",
+        "payloadType": "str",
+        "repeat": "10",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 160,
+        "y": 740,
+        "wires": [
+            [
+                "f188b618.0526c8"
+            ]
+        ]
+    },
+    {
+        "id": "f188b618.0526c8",
+        "type": "change",
+        "z": "19ef90f4.4dc70f",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "query",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 360,
+        "y": 740,
+        "wires": [
+            [
+                "900e1da7.849be"
+            ]
+        ]
+    },
+    {
+        "id": "85bc9c3d.0e10d",
+        "type": "change",
+        "z": "19ef90f4.4dc70f",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.feeds[0].field4",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 140,
+        "y": 800,
+        "wires": [
+            [
+                "ae76ea.341f7918"
+            ]
+        ]
+    },
+    {
+        "id": "ae76ea.341f7918",
+        "type": "change",
+        "z": "19ef90f4.4dc70f",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "$number(payload)",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 320,
+        "y": 820,
+        "wires": [
+            [
+                "7e8cf1f7.be266",
+                "deaadd41.321fc",
+                "177a3f6f.a10db1"
+            ]
+        ]
+    },
+    {
+        "id": "7e8cf1f7.be266",
+        "type": "ui_gauge",
+        "z": "19ef90f4.4dc70f",
+        "name": "Dust Gauge",
+        "group": "82e177be.a20708",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Dust Gauge",
+        "label": "ug/m3",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "300",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 550,
+        "y": 800,
+        "wires": []
+    },
+    {
+        "id": "deaadd41.321fc",
+        "type": "ui_chart",
+        "z": "19ef90f4.4dc70f",
+        "name": "Dust Line Chart",
+        "group": "82e177be.a20708",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "Dust Line Chart",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "5",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "outputs": 1,
+        "x": 560,
+        "y": 840,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "177a3f6f.a10db1",
+        "type": "function",
+        "z": "19ef90f4.4dc70f",
+        "name": "Dust Density Range Select",
+        "func": "if(msg.payload < 20)\n{\n    msg.select = 1;\n}\nelse if(21 < msg.payload < 50)\n{\n    msg.select = 2;\n}\nelse if(51 < msg.payload < 80)\n{\n    msg.select = 3;\n}\nelse\n{\n   msg.select = 4;\n}\n\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 380,
+        "y": 900,
+        "wires": [
+            [
+                "84140a5.f339df8"
+            ]
+        ]
+    },
+    {
+        "id": "9b363446.6f2998",
+        "type": "ui_led",
+        "z": "19ef90f4.4dc70f",
+        "group": "82e177be.a20708",
+        "order": 5,
+        "width": "3",
+        "height": "3",
+        "label": "Dust",
+        "labelPlacement": "left",
+        "labelAlignment": "center",
+        "colorForValue": [
+            {
+                "color": "green",
+                "value": "1",
+                "valueType": "num"
+            },
+            {
+                "color": "yellow",
+                "value": "2",
+                "valueType": "num"
+            },
+            {
+                "color": "orange",
+                "value": "3",
+                "valueType": "num"
+            },
+            {
+                "color": "red",
+                "value": "4",
+                "valueType": "num"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "name": "Dust Indicator",
+        "x": 820,
+        "y": 900,
+        "wires": [],
+        "inputLabels": [
+            "msg.select"
+        ]
+    },
+    {
+        "id": "84140a5.f339df8",
+        "type": "change",
+        "z": "19ef90f4.4dc70f",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "select",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "$number(payload)",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 620,
+        "y": 900,
+        "wires": [
+            [
+                "9b363446.6f2998"
+            ]
+        ]
+    },
+    {
+        "id": "5a19196b.a81bc8",
+        "type": "change",
+        "z": "19ef90f4.4dc70f",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "select",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "$number(payload)",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 600,
+        "y": 640,
+        "wires": [
+            [
+                "b15cc192.ed6c7"
+            ]
+        ]
+    },
+    {
+        "id": "c6793b74.cb49a8",
+        "type": "function",
+        "z": "19ef90f4.4dc70f",
+        "name": "TVOC Range Select",
+        "func": "if(msg.payload < 100)\n{\n    msg.select = 1;\n}\nelse if(101 < msg.payload < 300)\n{\n    msg.select = 2;\n}\nelse if(301 < msg.payload < 600)\n{\n    msg.select = 3;\n}\nelse\n{\n   msg.select = 4;\n}\n\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 520,
+        "y": 400,
+        "wires": [
+            [
+                "98604cde.2d78d"
+            ]
+        ]
+    },
+    {
+        "id": "30fbe077.ffc8d",
+        "type": "ui_led",
+        "z": "19ef90f4.4dc70f",
+        "group": "593f5489.70ceac",
+        "order": 4,
+        "width": "3",
+        "height": "3",
+        "label": "TVOC",
+        "labelPlacement": "left",
+        "labelAlignment": "center",
+        "colorForValue": [
+            {
+                "color": "green",
+                "value": "1",
+                "valueType": "num"
+            },
+            {
+                "color": "yellow",
+                "value": "2",
+                "valueType": "num"
+            },
+            {
+                "color": "orange",
+                "value": "3",
+                "valueType": "num"
+            },
+            {
+                "color": "red",
+                "value": "4",
+                "valueType": "num"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "name": "TVOC Indicator",
+        "x": 920,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "98604cde.2d78d",
+        "type": "change",
+        "z": "19ef90f4.4dc70f",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "select",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "$number(payload)",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 720,
+        "y": 420,
+        "wires": [
+            [
+                "30fbe077.ffc8d",
+                "1216106e.bf53"
+            ]
+        ]
+    },
+    {
+        "id": "1c6ea65e.aa355a",
+        "type": "function",
+        "z": "19ef90f4.4dc70f",
+        "name": "eCO2 Range Select",
+        "func": "if(msg.payload < 1000)\n{\n    msg.select = 1;\n}\nelse if(1001 < msg.payload < 3000)\n{\n    msg.select = 2;\n}\nelse if(3001 < msg.payload < 4000)\n{\n    msg.select = 3;\n}\nelse\n{\n   msg.select = 4;\n}\n\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 520,
+        "y": 200,
+        "wires": [
+            [
+                "eda83abb.653838"
+            ]
+        ]
+    },
+    {
+        "id": "ac6fb4f4.997898",
+        "type": "ui_led",
+        "z": "19ef90f4.4dc70f",
+        "group": "7e389247.61017c",
+        "order": 4,
+        "width": "3",
+        "height": "3",
+        "label": "eCO2",
+        "labelPlacement": "left",
+        "labelAlignment": "center",
+        "colorForValue": [
+            {
+                "color": "green",
+                "value": "1",
+                "valueType": "num"
+            },
+            {
+                "color": "yellow",
+                "value": "2",
+                "valueType": "num"
+            },
+            {
+                "color": "orange",
+                "value": "3",
+                "valueType": "num"
+            },
+            {
+                "color": "red",
+                "value": "4",
+                "valueType": "num"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "name": "eCO2 Indicator",
+        "x": 920,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "eda83abb.653838",
+        "type": "change",
+        "z": "19ef90f4.4dc70f",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "select",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "$number(payload)",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 720,
+        "y": 220,
+        "wires": [
+            [
+                "ac6fb4f4.997898"
+            ]
+        ]
+    },
+    {
+        "id": "1216106e.bf53",
+        "type": "debug",
+        "z": "19ef90f4.4dc70f",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 860,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "7e389247.61017c",
+        "type": "ui_group",
+        "z": "",
+        "name": "eCO2 Data",
+        "tab": "1b4092bb.d7c5dd",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "593f5489.70ceac",
+        "type": "ui_group",
+        "z": "",
+        "name": "TVOC Data",
+        "tab": "1b4092bb.d7c5dd",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "b37e3329.404eb",
+        "type": "ui_group",
+        "z": "",
+        "name": "MICS Data",
+        "tab": "1b4092bb.d7c5dd",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "82e177be.a20708",
+        "type": "ui_group",
+        "z": "",
+        "name": "Dust Data",
+        "tab": "1b4092bb.d7c5dd",
+        "order": 4,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "1b4092bb.d7c5dd",
+        "type": "ui_tab",
+        "z": "",
+        "name": "LoRa Air Quality Dashboard",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    }
+]
