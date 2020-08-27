@@ -1,0 +1,28 @@
+function Decoder(bytes, port) {
+    if(bytes.length == 1) {
+        if(bytes[0] == 1) {
+            return {
+                'button': 'activated'
+            }
+        } else {
+            return {
+                'error': 'button action unknown'
+            }   
+        }
+    } else if(bytes.length == 8) {
+        var CCS_CO2 = (bytes[0]<<8) | bytes[1];
+        var CCS_TVOC = (bytes[2]<<8) | bytes[3];
+        var MICR = (bytes[4]<<8) | bytes[5];
+        var dust = (bytes[6]<<8) | bytes[7];
+        return {
+            field1 : CCS_CO2,
+            field2 : CCS_TVOC,
+            field3 : MICR,
+            field4 : dust
+        }
+    } else {
+        return {
+            'error': 'payload unknown'
+        }
+    }
+} 
