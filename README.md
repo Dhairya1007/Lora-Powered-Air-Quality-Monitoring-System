@@ -20,4 +20,3 @@ You can find the following components in this Repository.
 3. Demo codes for each Air Quality Sensor
 4. Node Red Flow file
 
-Detailed Writeup coming soon. Stay Tuned!
